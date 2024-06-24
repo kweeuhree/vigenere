@@ -33,7 +33,7 @@ def encode_message(message_to_encode, keyword):
     
     
     print('\n', encoded_message)
-    repeat()
+    continue_prompt()
 
 def encoding():
     message_to_encode = get_message()
@@ -73,7 +73,7 @@ def decode_message(message_to_decode, keyword):
          decoded_message += char
 
    print('\n', decoded_message)
-   repeat()
+   continue_prompt()
 
 def decoding():
     message_to_decode = get_message()
@@ -82,14 +82,14 @@ def decoding():
 
 # -------------------------------------------------------------------- end decode logic -
 
-def repeat():
-    time.sleep(1)
-    print('\nWould you like to exit?\nEnter yes or no: ', end="")
-    answer = input().lower()
-    if answer in valid_yes_answers:
-        print('\nEnd of session.')
-    else:
-        main()
+# def repeat():
+#     time.sleep(1)
+#     print('\nWould you like to exit?\nEnter yes or no: ', end="")
+#     answer = input().lower()
+#     if answer in valid_yes_answers:
+#         print('\nEnd of session.')
+#     else:
+#         main()
 
 
 def get_message():
@@ -107,7 +107,8 @@ def get_keyword():
 
 
 def continue_prompt(): 
-    print("\nWould you like to try again?\nEnter Y to continue or X to exit", end='')
+    time.sleep(1)
+    print("\nWould you like to try again?\nEnter Y to continue or X to exit:\n", end='')
     answer = input().lower()
     if answer in valid_yes_answers:
         main()
@@ -126,7 +127,7 @@ def main():
 
 if __name__ == "__main__":
   while True:
-    print('Hello!')
+    print('\nHello!')
     main()
 
     break
