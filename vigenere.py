@@ -9,8 +9,8 @@ def encode_message(message_to_encode, keyword):
     time.sleep(1)
 
     reference = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    # create an encoding string using keyword
 
+    # create an encoding string using keyword
     keyword_string = ''
     keyword_index = 0
     for char in message_to_encode:
@@ -76,36 +76,29 @@ def decode_message(message_to_decode, keyword):
    continue_prompt()
 
 def decoding():
+     # get the message and keyword from the user
     message_to_decode = get_message()
     keyword = get_keyword()
+    # call the decode function
     decode_message(message_to_decode, keyword)
 
 # -------------------------------------------------------------------- end decode logic -
 
-# def repeat():
-#     time.sleep(1)
-#     print('\nWould you like to exit?\nEnter yes or no: ', end="")
-#     answer = input().lower()
-#     if answer in valid_yes_answers:
-#         print('\nEnd of session.')
-#     else:
-#         main()
-
-
+# Function to get the message from the user
 def get_message():
     print('\nPlease enter message to encode: ', end='')
     message_to_encode = input().lower()
 
     return message_to_encode
 
-
+# Function to get the keyword from the user
 def get_keyword():
     print('\nPlease enter keyword for encoding: ', end='')
     keyword = input().lower()
 
     return keyword
 
-
+# Function to prompt the user to continue or exit
 def continue_prompt(): 
     time.sleep(1)
     print("\nWould you like to try again?\nEnter Y to continue or X to exit:\n", end='')
@@ -115,6 +108,7 @@ def continue_prompt():
     else:
         print('\nEnd of session.')
 
+# Main function to start the program
 def main():
     print("\nWould you like to encode or decode a message?\nEnter E to encode or D to decode:\n", end='')
     type = input().lower()
